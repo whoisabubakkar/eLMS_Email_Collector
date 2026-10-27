@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 400px; margin: 0; padding: 12px; font: 14px system-ui, sans-serif; color: #1c1c1c; background: #fff; }
+  h1 { font-size: 16px; margin: 0 0 8px; }
+  #courses label { display: block; padding: 4px 0; cursor: pointer; }
+  #courses { max-height: 220px; overflow-y: auto; border: 1px solid #ddd; border-radius: 6px; padding: 6px 8px; }
+  button { margin: 8px 6px 0 0; padding: 6px 12px; border: 0; border-radius: 6px; background: #1a4bb0; color: #fff; cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  button.alt { background: #e8e8e8; color: #1c1c1c; }
+  #status { margin: 8px 0; color: #555; min-height: 18px; white-space: pre-wrap; }
+  textarea { width: 100%; height: 110px; box-sizing: border-box; font-size: 12px; }
+  .result { border-top: 1px solid #ddd; margin-top: 10px; padding-top: 8px; }
+  .result h2 { font-size: 13px; margin: 0 0 4px; }
+  input[type=text] { width: 110px; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+  <h1>eLMS Email Collector</h1>
+  <div id="status">Loading courses…</div>
+  <div id="courses"></div>
+  <div>
+    <small>If the list fails, enter a course ID (the number in <code>course/view.php?id=…</code>):</small><br>
+    <input type="text" id="manualId" placeholder="e.g. 7945">
+  </div>
+  <label><input type="checkbox" id="teachers"> Include teachers</label><br>
+  <button id="go" disabled>Collect emails</button>
+  <div id="results"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
